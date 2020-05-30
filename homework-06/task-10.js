@@ -1,14 +1,13 @@
-// TASK 10
-
 import users from "./users.js";
 
 const getAllScillsOfUsers = (users) => {
   return users
-    .reduce((allSkills, user) => [...allSkills, ...user.skills], [])
-    .reduce((uniqueSkills, skill) => {
-      if (uniqueSkills.includes(skill)) return uniqueSkills;
-      return [...uniqueSkills, skill];
-    });
+    .reduce((allSkills, user) => {
+      allSkills.push(...user.skills);
+      return allSkills;
+    }, [])
+    .filter((user, index, arr) => arr.indexOf(user) === index)
+    .sort();
 };
 
 console.log(
