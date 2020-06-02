@@ -1,11 +1,13 @@
+"use strict";
+
 let input;
 const numbers = [];
 let total = 0;
 
-if (input !== 0) {
-  input = Number(prompt("Ввести число"));
-  input.push(numbers);
-}
+do {
+  input = Number(prompt("введите число", ""));
+  numbers.push(input);
+} while (input !== 0 && input !== null);
 
 for (let number of numbers) {
   total += number;

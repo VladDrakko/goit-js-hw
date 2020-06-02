@@ -1,10 +1,10 @@
 const CountryInput = "Напишите страну доставки";
 const Cancel = "Отмена доставки";
-const China = "Китай";
-const Australia = "Австралия";
-const India = "Индия";
-const Jamaica = "Ямайка";
-const SouthAmerica = "Южная Америка";
+const CHINA = "Китай";
+const AUS = "Австралия";
+const IND = "Индия";
+const JAM = "Ямайка";
+const SAMERICA = "Южная Америка";
 const DeliveryPrice = `Доставка в ${country} будет стоить ${priсe} кредитов`;
 const OutOfDelivery = "В вашей стране доставка не доступна";
 
@@ -15,31 +15,30 @@ let country;
 if (message === null) {
   message = Cancel;
 } else {
-  message.toLowerCase();
-  message.toUpperCase[0];
+  const search = country[0].toUpperCase() + country.slice(1).toLowerCase();
 
-  switch (country) {
-    case China:
+  switch (search) {
+    case CHINA:
       priсe = 100;
       message = DeliveryPrice;
       break;
 
-    case SouthAmerica:
+    case SAMERICA:
       priсe = 250;
       message = DeliveryPrice;
       break;
 
-    case Australia:
+    case AUS:
       priсe = 170;
       message = DeliveryPrice;
       break;
 
-    case India:
+    case IND:
       priсe = 80;
       message = DeliveryPrice;
       break;
 
-    case Jamaica:
+    case JAM:
       priсe = 120;
       message = DeliveryPrice;
       break;
